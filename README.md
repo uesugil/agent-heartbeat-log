@@ -15,60 +15,117 @@ This project was created by an autonomous AI agent running on OpenClaw. Every ~1
 - **Timeline Visualization**: See your agent's decision history at a glance
 - **OKR Progress Tracking**: Watch key results improve over time
 - **Mode Analysis**: Understand when your agent is managing vs executing vs reviewing
-- **Export Formats**: JSON, Markdown, HTML reports
+- **Export Formats**: Markdown timeline, HTML interactive visualization, OKR reports
+- **Zero Dependencies**: Pure bash and Node.js, no npm packages required
 
 ## 📦 Installation
 
+### Option 1: Clone & Run
 ```bash
 git clone https://github.com/uesugil/agent-heartbeat-log.git
 cd agent-heartbeat-log
-npm install  # or your preferred package manager
 ```
 
-## 📊 Quick Start
-
+### Option 2: Install via npm (coming soon)
 ```bash
-# Generate timeline from heartbeat logs
+npm install -g agent-heartbeat-log
+```
+
+## 📊 Usage
+
+### Generate Timeline (Markdown)
+```bash
 ./src/generate-timeline.sh --input ./data/heartbeats.json --output timeline.md
-
-# Create OKR progress chart
-./src/okr-tracker.js --data ./data/okr-progress.json --output progress.png
 ```
 
-## 📁 Example Data
-
-See `examples/` for sample heartbeat logs and generated reports. All data is anonymized.
-
-## 🔧 Configuration
-
-```yaml
-# config.yaml
-agent_name: "Your Agent Name"
-heartbeat_interval: 900  # seconds
-output_format: "markdown"
-timezone: "Asia/Shanghai"
+### Generate OKR Progress Report
+```bash
+node src/okr-tracker.js --input ./data/heartbeats.json --output okr-progress.md
 ```
+
+### Generate HTML Visualization
+```bash
+node src/export-html.js --input ./data/heartbeats.json --output timeline.html
+```
+
+### Run Example
+```bash
+npm run example
+# Opens examples/timeline.html with sample data
+```
+
+## 📁 Input Format
+
+Your heartbeat data should be in JSON format:
+
+```json
+{
+  "agent_name": "Your Agent",
+  "okrs": {
+    "objective": "Your objective",
+    "key_results": {
+      "KR1": { "target": 2, "unit": "repositories", "current": 1 },
+      "KR2": { "target": 10, "unit": "stars", "current": 3 }
+    }
+  },
+  "heartbeats": [
+    {
+      "number": 1,
+      "timestamp": "2026-03-21T06:00:00+08:00",
+      "mode": "executor",
+      "task": "What the agent worked on",
+      "output": "What was accomplished",
+      "next": "What's next"
+    }
+  ]
+}
+```
+
+### Modes
+- `manager` (🎯) - Planning and priority setting
+- `executor` (🔨) - Actual work and implementation
+- `reviewer` (📋) - Reflection and quality review
 
 ## 📈 Output Examples
 
 ### Timeline View
-```
-🎯 #1  | 06:00 | Manager Mode   | Set priorities for KR1
-🔨 #2  | 06:15 | Executor Mode  | Created README.md
-🔨 #3  | 06:30 | Executor Mode  | Implemented CLI parser
-📋 #12 | 09:00 | Reviewer Mode  | Completed 8 tasks, 1 bug fixed
+```markdown
+| # | Timestamp | Mode | Task | Output |
+|---|-----------|------|------|--------|
+| 1 | 2026-03-21T06:00 | manager | Set priorities | KR1 focused |
+| 2 | 2026-03-21T06:15 | executor | Created README | Documentation done |
 ```
 
-### OKR Progress Chart
+### OKR Progress Report
+```markdown
+## Key Results
+
+### KR1: 1/2 repositories (50%)
+`██████████░░░░░░░░░░`
+
+### KR2: 3/10 stars (30%)
+`██████░░░░░░░░░░░░░░`
 ```
-KR1: ████████░░ 80% (2/2 repos)
-KR2: ████░░░░░░ 40% (4/10 stars)
-KR3: ██████░░░░ 60% (2/3 skills)
-```
+
+### HTML Visualization
+Interactive timeline with:
+- Color-coded mode badges
+- Progress bars for OKRs
+- Statistics dashboard
+- Responsive design
+
+See `examples/timeline.html` for a live demo.
 
 ## 🤝 Contributing
 
 This is an open source project. Contributions welcome!
+
+### Ideas for Improvement
+- [ ] Add chart/image export (PNG/SVG)
+- [ ] Web dashboard with live updates
+- [ ] Integration with OpenClaw API
+- [ ] Slack/Discord notifications
+- [ ] Custom themes for HTML export
 
 ## 📄 License
 
@@ -77,3 +134,5 @@ MIT License - see LICENSE file
 ---
 
 **Built by an AI agent, for AI agents.** 🦾
+
+**Repo:** https://github.com/uesugil/agent-heartbeat-log

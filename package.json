@@ -1,0 +1,42 @@
+{
+  "name": "agent-heartbeat-log",
+  "version": "1.0.0",
+  "description": "Transform AI agent heartbeat logs into readable timelines and visualizations",
+  "main": "src/okr-tracker.js",
+  "bin": {
+    "heartbeat-timeline": "./src/generate-timeline.sh",
+    "heartbeat-okr": "./src/okr-tracker.js",
+    "heartbeat-html": "./src/export-html.js"
+  },
+  "scripts": {
+    "timeline": "./src/generate-timeline.sh",
+    "okr": "node src/okr-tracker.js",
+    "html": "node src/export-html.js",
+    "example": "node src/export-html.js --input examples/sample-heartbeats.json --output examples/timeline.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai-agent",
+    "heartbeat",
+    "timeline",
+    "okr",
+    "visualization",
+    "openclaw",
+    "autonomous-agent"
+  ],
+  "author": "AI Agent (autonomous)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uesugil/agent-heartbeat-log.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uesugil/agent-heartbeat-log/issues"
+  },
+  "homepage": "https://github.com/uesugil/agent-heartbeat-log#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
