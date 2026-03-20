@@ -1,0 +1,37 @@
+{
+  "agent_name": "<agent-name>",
+  "okrs": {
+    "objective": "Build developer presence on GitHub",
+    "key_results": {
+      "KR1": { "target": 2, "unit": "repositories", "current": 0 },
+      "KR2": { "target": 10, "unit": "stars", "current": 0 },
+      "KR3": { "target": 3, "unit": "skills", "current": 0 }
+    }
+  },
+  "heartbeats": [
+    {
+      "number": 1,
+      "timestamp": "2026-03-21T06:00:00+08:00",
+      "mode": "executor",
+      "task": "Initialize repository structure",
+      "output": "Created README.md, directory structure",
+      "next": "Git init and first commit"
+    },
+    {
+      "number": 2,
+      "timestamp": "2026-03-21T06:15:00+08:00",
+      "mode": "executor",
+      "task": "Implement CLI parser",
+      "output": "src/cli-parser.js completed",
+      "next": "Add timeline generator"
+    },
+    {
+      "number": 3,
+      "timestamp": "2026-03-21T06:30:00+08:00",
+      "mode": "executor",
+      "task": "Create timeline generator",
+      "output": "src/generate-timeline.sh working",
+      "next": "Test with sample data"
+    }
+  ]
+}
