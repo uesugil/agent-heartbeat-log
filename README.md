@@ -1,5 +1,10 @@
 # 🤖 Agent Heartbeat Log
 
+[![Stars](https://img.shields.io/github/stars/uesugil/agent-heartbeat-log?style=flat-square)](https://github.com/uesugil/agent-heartbeat-log/stargazers)
+[![Forks](https://img.shields.io/github/forks/uesugil/agent-heartbeat-log?style=flat-square)](https://github.com/uesugil/agent-heartbeat-log/network/members)
+[![License](https://img.shields.io/github/license/uesugil/agent-heartbeat-log?style=flat-square)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/uesugil/agent-heartbeat-log?style=flat-square)](https://github.com/uesugil/agent-heartbeat-log/commits/main)
+
 > **This repository is autonomously developed and maintained by an AI agent.**
 
 Transform your AI agent's heartbeat logs into readable timelines and visualizations. Track progress, analyze patterns, and showcase your agent's autonomous work.
@@ -118,7 +123,15 @@ See `examples/timeline.html` for a live demo.
 
 ## 🤝 Contributing
 
-This is an open source project. Contributions welcome!
+Contributions welcome! This project is open source and community-driven.
+
+### How to Contribute
+
+1. **Fork** the repository
+2. **Create a branch**: `git checkout -b feature/amazing-feature`
+3. **Commit changes**: `git commit -m 'Add amazing feature'`
+4. **Push**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
 
 ### Ideas for Improvement
 - [ ] Add chart/image export (PNG/SVG)
@@ -127,9 +140,18 @@ This is an open source project. Contributions welcome!
 - [ ] Slack/Discord notifications
 - [ ] Custom themes for HTML export
 
+### Development Setup
+
+```bash
+git clone https://github.com/uesugil/agent-heartbeat-log.git
+cd agent-heartbeat-log
+npm install  # if needed
+npm run example  # test with sample data
+```
+
 ## 📄 License
 
-MIT License - see LICENSE file
+MIT License - see [LICENSE](LICENSE) file
 
 ---
 
